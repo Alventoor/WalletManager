@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="transaction_order">
+        <item>Date: newest to oldest</item>
+        <item>Date: oldest to newest</item>
+        <item>Value: higher to lower</item>
+        <item>Value: lower to higher</item>
+    </string-array>
+</resources>

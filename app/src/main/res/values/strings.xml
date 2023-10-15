@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE resources [
+    <!ENTITY appname "Wallet Manager">
+]>
+
+<resources>
+    <string name="app_name">&appname;</string>
+
+    <string name="transaction_date">%td %tB %tY</string>
+    <string name="transaction_date_short">%td/%tm/%tY</string>
+
+    <!-- Accessibility -->
+    <string name="accessibility_open_menu_on_click">Click to open menu</string>
+    <string name="accessibility_close_menu_on_click">Click to close menu</string>
+
+    <!-- Actions -->
+    <string name="delete_action">Delete</string>
+    <string name="cancel_action">Cancel</string>
+    <string name="apply_action">Apply</string>
+    <string name="create_action">Create</string>
+
+    <!-- Fragment User Title -->
+    <string name="settings_fragment_title">Settings</string>
+
+    <!-- Home -->
+    <string name="home_screen_title">&appname;</string>
+    <string name="home_screen_wallet_grid_title">Wallets</string>
+    <string name="home_screen_empty_wallet_list">No wallets found</string>
+    <string name="home_screen_navigation_description">Open drawer menu</string>
+    <string name="home_screen_add_wallet_button_description">Add wallet</string>
+    <string name="home_screen_menu_button_description">Open menu</string>
+    <string name="home_screen_menu_item_delete_wallets">Delete wallets</string>
+    <string name="home_screen_delete_selected_wallets_button_description">Delete selected wallets</string>
+    <string name="home_screen_delete_cancel_wallet_deletion_button_description">Cancel wallet deletion</string>
+
+    <!-- Home drawer -->
+    <string name="home_screen_drawer_title">Navigation menu</string>
+    <string name="home_screen_drawer_settings_menu_item">Settings</string>
+
+    <!-- Wallet creation -->
+    <string name="wallet_creation_screen_title">Wallet creation</string>
+    <string name="wallet_creation_screen_navigate_up_description">Navigate back to home menu</string>
+    <string name="wallet_creation_screen_wallet_name_hint">Name</string>
+    <string name="wallet_creation_screen_wallet_name_clear_button_description">Clear wallet name</string>
+    <string name="wallet_creation_screen_wallet_currency_hint">Currency</string>
+    <string name="wallet_creation_screen_wallet_balance_hint">Initial balance (optional)</string>
+    <string name="wallet_creation_screen_wallet_balance_clear_button_description">Clear wallet balance</string>
+    <string name="wallet_creation_screen_start_credit">Start credit</string>
+
+    <!-- Wallet -->
+    <string name="wallet_screen_empty_wallet_description">There is nothing to see here.</string>
+    <string name="wallet_screen_balance_presentation">Balance: %s</string>
+    <string name="wallet_screen_add_transaction_button_description">Add a new transaction</string>
+
+    <!-- Wallet top bar -->
+    <string name="wallet_screen_default_title">Wallet</string>
+    <string name="wallet_screen_navigate_up_description">Navigate to wallets menu</string>
+    <string name="wallet_screen_menu_button_description">Open wallet menu</string>
+    <string name="wallet_screen_delete_selected_transactions_button_description">Delete selected transactions</string>
+    <string name="wallet_screen_cancel_transaction_deletion_button_description">Cancel transaction deletion</string>
+
+    <!-- Wallet top bar menu -->
+    <string name="wallet_screen_menu_item_settings">Wallet settings</string>
+    <string name="wallet_screen_menu_item_delete_transactions">Delete transactions</string>
+
+    <!-- Wallet transaction filter -->
+    <string name="wallet_screen_open_filter_menu_button">Filter</string>
+    <string name="wallet_screen_filter_menu_title">Filter</string>
+    <string name="wallet_screen_filter_menu_transactions_order_text">Order transactions by:</string>
+    <string name="wallet_screen_filter_menu_date_category">Date</string>
+    <string name="wallet_screen_filter_menu_value_category">Value</string>
+    <string name="wallet_screen_filter_menu_start_date_hint">Start date</string>
+    <string name="wallet_screen_filter_menu_end_date_hint">End date</string>
+    <string name="wallet_screen_filter_menu_start_date_clear_button_description">Clear start date filter</string>
+    <string name="wallet_screen_filter_menu_end_date_clear_button_description">Clear end date filter</string>
+    <string name="wallet_screen_filter_menu_minimum_value_hint">Minimum value</string>
+    <string name="wallet_screen_filter_menu_maximum_value_hint">Maximum value</string>
+    <string name="wallet_screen_filter_menu_invalid_minimum_value_text">The minimum value cannot be superior to the maximum</string>
+    <string name="wallet_screen_filter_menu_minimum_value_clear_button_description">Clear minimum value</string>
+    <string name="wallet_screen_filter_menu_maximum_value_clear_button_description">Clear maximum value</string>
+
+    <!-- Wallet settings -->
+    <string name="wallet_settings_screen_title">Wallet settings</string>
+    <string name="wallet_settings_screen_advanced_wallet_settings_menu_title">Advanced wallet settings</string>
+    <string name="wallet_settings_screen_navigate_up_description">Navigate back to wallet</string>
+    <string name="wallet_settings_screen_wallet_name_hint">Rename wallet</string>
+    <string name="wallet_settings_screen_wallet_name_clear_button_description">Reset the wallet name</string>
+    <string name="wallet_settings_screen_delete_wallet_button">Delete wallet</string>
+
+    <!-- Wallet not found -->
+    <string name="wallet_not_found_screen_navigate_back_description">Navigate to wallets menu</string>
+    <string name="wallet_not_found_screen_description">Uh-oh the requested wallet does not exist</string>
+
+
+    <!-- Wallet deletion -->
+    <string name="wallet_deletion_dialog_title">Delete wallet</string>
+    <string name="wallet_deletion_dialog_one_wallet_message">Do you really want to delete this wallet? This action is irreversible.</string>
+    <string name="wallet_deletion_dialog_multiple_wallets_message">Do you really want to delete these wallets? This action is irreversible.</string>
+    <string name="wallet_deletion_dialog_confirm_button">Confirm</string>
+
+
+    <!-- Transaction creation -->
+    <string name="transaction_creation_screen_title">Add transaction</string>
+    <string name="transaction_creation_screen_navigate_up_description">Navigate back to wallet</string>
+    <string name="transaction_creation_screen_transaction_description_hint">Description</string>
+    <string name="transaction_creation_screen_transaction_description_clear_button_description">Clear transaction description</string>
+    <string name="transaction_creation_screen_transaction_value_hint">Value</string>
+    <string name="transaction_creation_screen_transaction_value_clear_button_description">Clear transaction value</string>
+    <string name="transaction_creation_screen_transaction_date_hint">Date</string>
+    <string name="transaction_creation_screen_transaction_date_clear_button_description">Clear transaction date</string>
+    <string name="transaction_creation_screen_transaction_category_hint">Category</string>
+    <string name="transaction_creation_screen_transaction_category_clear_button_description">Clear transaction category</string>
+    <string name="transaction_creation_screen_no_transaction_category_selected">No category</string>
+    <string name="transaction_creation_screen_add_transaction_category_button_description">Add a new transaction category</string>
+    <string name="transaction_creation_screen_add_transaction_button">Add</string>
+
+    <!-- Transaction category creation -->
+    <string name="transaction_category_creation_screen_title">Add category</string>
+    <string name="transaction_category_creation_screen_name_hint">Name</string>
+    <string name="transaction_category_creation_screen_name_clear_button_description">Clear transaction category name</string>
+    <string name="transaction_category_creation_screen_icon_hint">Icon</string>
+    <string name="transaction_category_creation_screen_no_icon_selected">No icon</string>
+    <string name="transaction_category_creation_screen_add_category_button">Add</string>
+
+    <!-- App settings -->
+    <string name="settings_title">Wallet Manager settings</string>
+    <string name="settings_menu_title">Settings</string>
+    <string name="transaction_category_settings_title">Transaction categories</string>
+    <string name="settings_top_app_bar_content_description_navigate_up">Navigate to wallets menu</string>
+    <string name="transaction_category_settings_update_item_button">Save transaction category change button</string>
+    <string name="transaction_category_settings_cancel_item_change_button">Cancel transaction category change button</string>
+    <string name="transaction_category_settings_edit_item_button">Edit transaction category button</string>
+    <string name="transaction_category_settings_delete_item_button">Delete transaction category button</string>
+
+    <string name="transaction_category_settings_add_category_title">Add category</string>
+    <string name="transaction_category_settings_add_category_category_name_label">Category\'s name</string>
+    <string name="transaction_category_settings_add_category_button">Add transaction category button</string>
+
+    <!-- App settings : Transaction Category deletion -->
+    <string name="transaction_category_deletion_title">Delete transaction category</string>
+    <string name="transaction_category_deletion_text">Select what you want to do with transactions of this category. Warning ! These operations are irreversible.</string>
+    <string name="transaction_category_deletion_orphan_transactions">Orphan associated transactions</string>
+    <string name="transaction_category_deletion_replace_category">Replace this transaction category with:</string>
+    <string name="transaction_category_deletion_delete_transactions">Delete all associated transactions</string>
+
+</resources>
