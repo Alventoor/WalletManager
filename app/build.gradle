@@ -8,7 +8,7 @@ android {
     compileSdk 34
 
     defaultConfig {
-        applicationId "com.tutamail.julienm99.walletmanager"
+        applicationId "com.github.alventoor.walletmanager"
         minSdk 26
         targetSdk 34
         versionCode 1
@@ -39,7 +39,7 @@ android {
         compose = true
     }
 
-    namespace 'com.tutamail.julienm99.walletmanager'
+    namespace 'com.github.alventoor.walletmanager'
 }
 
 ksp {
