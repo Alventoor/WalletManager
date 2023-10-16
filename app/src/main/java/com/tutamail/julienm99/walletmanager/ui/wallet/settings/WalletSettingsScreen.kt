@@ -35,8 +35,8 @@ fun WalletSettingsScreen(
         viewModel.onWalletNavigated()
     }
 
-    val onDeleteWallet = {
-        viewModel.deleteWallet()
+    val onDeleteWallet = { wallet: Wallet ->
+        viewModel.deleteWallet(wallet)
         onNavigateToHome()
         viewModel.onHomeNavigated()
     }
@@ -62,11 +62,11 @@ private fun WalletSettingsScreen(
     onNavigateToWallet: (walletId: Long) -> Unit,
     onNavigateToWalletNotFound: (screenTitle: String) -> Unit,
     onWalletNameUpdated: (String) -> Unit,
-    onResetWalletNameClicked: () -> Unit,
+    onResetWalletNameClicked: (wallet: Wallet) -> Unit,
     onDeleteWalletClicked: () -> Unit,
-    onDeleteWallet: () -> Unit,
+    onDeleteWallet: (wallet: Wallet) -> Unit,
     onDismissDeletionDialog: () -> Unit,
-    onSaveSettingsClicked: () -> Unit,
+    onSaveSettingsClicked: (wallet: Wallet) -> Unit,
 ) {
     val screenTitle = stringResource(R.string.wallet_settings_screen_title)
 
@@ -100,14 +100,19 @@ private fun WalletSettingsScreen(
                 }
 
                 is WalletSettingsUiState.Loaded -> {
+                    val wallet = walletSettingsUiState.wallet
+
                     if (walletSettingsUiState.changesSaved) {
                         LaunchedEffect(Unit) {
-                            onNavigateToWallet(walletSettingsUiState.wallet.id)
+                            onNavigateToWallet(wallet.id)
                         }
                     }
 
                     if (walletSettingsUiState.showDeletionDialog) {
-                        WalletDeletionDialog(onDeleteWallet, onDismissDeletionDialog)
+                        WalletDeletionDialog(
+                            onDeletion = { onDeleteWallet(wallet) },
+                            onCancel = onDismissDeletionDialog
+                        )
                     }
 
                     Column(
@@ -118,7 +123,7 @@ private fun WalletSettingsScreen(
                             value = walletSettingsUiState.newName,
                             label = stringResource(R.string.wallet_settings_screen_wallet_name_hint),
                             onValueChange = onWalletNameUpdated,
-                            onClearButtonClick = onResetWalletNameClicked,
+                            onClearButtonClick = { onResetWalletNameClicked(wallet) },
                             clearButtonContentDescription = stringResource(R.string.wallet_settings_screen_wallet_name_clear_button_description)
                         )
 
@@ -142,7 +147,7 @@ private fun WalletSettingsScreen(
 
                         Spacer(modifier = Modifier.weight(1f))
 
-                        Button(onClick = onSaveSettingsClicked) {
+                        Button(onClick = { onSaveSettingsClicked(wallet) }) {
                             ButtonText(stringResource(R.string.apply_action))
                         }
                     }

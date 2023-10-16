@@ -11,6 +11,7 @@ import com.tutamail.julienm99.walletmanager.core.util.combine
 import com.tutamail.julienm99.walletmanager.core.util.toBigDecimalResult
 import com.tutamail.julienm99.walletmanager.core.util.toStateFlow
 import com.tutamail.julienm99.walletmanager.core.util.toTimestamp
+import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
@@ -22,7 +23,7 @@ class TransactionCreationViewModel(
     transactionCategoriesRepository: TransactionCategoriesRepository,
     walletsRepository: WalletsRepository,
 ): ViewModel() {
-    private val wallet = walletsRepository.getWallet(walletId).toStateFlow(null)
+    private val wallet: Flow<Wallet?> = walletsRepository.getWallet(walletId)
 
     private val transactionValue: MutableStateFlow<BigDecimal> = MutableStateFlow(BigDecimal.ZERO)
 
@@ -66,9 +67,8 @@ class TransactionCreationViewModel(
         transactionCategory.value = category
     }
 
-    fun registerTransaction() {
+    fun registerTransaction(wallet: Wallet) {
         viewModelScope.launch {
-            val wallet = wallet.value ?: return@launch
             val transactionDate = transactionDate.value ?: return@launch
 
             val transaction = Transaction(

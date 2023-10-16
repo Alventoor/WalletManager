@@ -11,12 +11,11 @@ class WalletSettingsViewModel(
     walletId: Long,
     private val walletsRepository: WalletsRepository,
 ): ViewModel() {
-    private val wallet: StateFlow<Wallet?> = walletsRepository.getWallet(walletId)
+    private val wallet: Flow<Wallet?> = walletsRepository.getWallet(walletId)
         .onEach {  wallet ->
             if (wallet != null)
                 newWalletName.value = wallet.name
         }
-        .toStateFlow(null)
 
     private val newWalletName: MutableStateFlow<String> = MutableStateFlow("")
 
@@ -47,14 +46,12 @@ class WalletSettingsViewModel(
         newWalletName.value = newName
     }
 
-    fun onResetWalletNameClicked() {
-        val wallet = wallet.value ?: return
+    fun onResetWalletNameClicked(wallet: Wallet) {
         newWalletName.value = wallet.name
     }
 
-    fun onSaveSettingsClicked() {
+    fun onSaveSettingsClicked(wallet: Wallet) {
         viewModelScope.launch {
-            val wallet = wallet.value ?: return@launch
             val newName = newWalletName.value
 
             if (newName != wallet.name) {
@@ -69,9 +66,8 @@ class WalletSettingsViewModel(
         showWalletDeletionDialog.value = true
     }
 
-    fun deleteWallet() {
+    fun deleteWallet(wallet: Wallet) {
         viewModelScope.launch {
-            val wallet = wallet.value ?: return@launch
             walletsRepository.deleteWallet(wallet)
 
             showWalletDeletionDialog.value = false

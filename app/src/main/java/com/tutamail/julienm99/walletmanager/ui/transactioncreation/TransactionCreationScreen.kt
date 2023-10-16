@@ -73,7 +73,7 @@ private fun TransactionCreationScreen(
     onValueUpdated: (String) -> Unit,
     onDateUpdated: (String) -> Unit,
     onCategoryUpdated: (TransactionCategory?) -> Unit,
-    onAddButtonClicked: () -> Unit,
+    onAddButtonClicked: (wallet: Wallet) -> Unit,
 ) {
     val screenTitle = stringResource(R.string.transaction_creation_screen_title)
 
@@ -192,7 +192,7 @@ private fun TransactionCreationScreen(
 
                         Button(
                             modifier = Modifier.padding(top = 32.dp),
-                            onClick = onAddButtonClicked,
+                            onClick = { onAddButtonClicked(transactionCreationUiState.wallet) },
                             enabled = transactionCreationUiState.isValid
                         ) {
                             ButtonText(stringResource(R.string.transaction_creation_screen_add_transaction_button))
