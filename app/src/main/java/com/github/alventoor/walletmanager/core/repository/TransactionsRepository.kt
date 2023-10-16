@@ -8,7 +8,6 @@ interface TransactionsRepository {
 
     suspend fun insertTransaction(transaction: Transaction)
 
-    // TODO Replace Long with Transaction?
     suspend fun deleteTransactions(transactions: List<Long>)
 
     suspend fun deleteTransactionsFromCategory(transactionCategoryId: Long)
