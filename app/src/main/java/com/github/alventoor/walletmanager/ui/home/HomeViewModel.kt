@@ -4,13 +4,14 @@ import androidx.lifecycle.*
 import com.github.alventoor.walletmanager.core.model.Wallet
 import com.github.alventoor.walletmanager.core.repository.WalletsRepository
 import com.github.alventoor.walletmanager.core.util.toStateFlow
+import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.launch
 
 class HomeViewModel(private val repository: WalletsRepository): ViewModel() {
-    private val wallets: StateFlow<List<Wallet>> = repository.getWallets().toStateFlow(emptyList())
+    private val wallets: Flow<List<Wallet>> = repository.getWallets()
 
     private val walletsToDelete: MutableStateFlow<Map<Long, Wallet>> = MutableStateFlow(emptyMap())
 
